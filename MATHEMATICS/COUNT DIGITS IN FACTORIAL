@@ -1,0 +1,32 @@
+Given an integer N. You have to find the number of digits that appear in its factorial, where factorial is defined as, factorial(N) = 1*2*3*4..*N and factorial(0) = 1.
+ 
+
+Example 1:
+
+Input:
+N = 5
+Output:
+3
+Explanation:
+5! is 120 so there are 3
+digits in 120
+Example 2:
+
+Input:
+N = 10
+Output:
+7
+Explanation:
+10! is 3628800 so there are
+7 digits in 3628800
+
+
+
+import math
+class Solution:
+    def facDigits(self,N):
+        #code here
+        sum1=0
+        for i in range(1,N+1):
+            sum1+=math.log10(i)
+        return int(sum1)+1
