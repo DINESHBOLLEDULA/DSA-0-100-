@@ -1,0 +1,44 @@
+Check if the binary representation of a number is palindrome or not.
+ 
+
+Example 1:
+
+Input:
+N = 17
+Output:
+1
+Explanation:
+(17)10 = (10001)2
+Which is pallindrome hence
+output is 1.
+
+Example 2:
+
+Input:
+N = 16
+Output:
+0
+Explanation:
+(16)10 = (10000)2
+Which is not pallindrome 
+hence output is 0.
+
+
+
+
+class Solution:
+    def isPallindrome(self, N):
+        # code here
+        n=bin(N)
+        x=n[2:]
+        l=len(x)
+        i=0
+        flag=1
+        for i in range(l):
+            if i>=l//2:
+                break
+            if x[i]==x[l-i-1]:
+                flag=flag&1
+            else:
+               flag=flag&0
+        return flag
