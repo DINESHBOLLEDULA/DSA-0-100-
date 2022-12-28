@@ -1,0 +1,28 @@
+Given a positive integer, print its binary representation.
+Note: Do not use any inbuilt functions/libraries for your main logic
+
+Sample Input 0
+
+5
+10
+15
+7
+1
+120
+Sample Output 0
+
+1010
+1111
+111
+1
+1111000
+
+def bin(n):
+    if (n > 1):
+        bin(n >> 1)
+    print(n & 1, end="")
+t=int(input())
+for _ in range(t):
+    n=int(input())
+    bin(n)
+    print()
